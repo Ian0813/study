@@ -24,7 +24,7 @@
 				if(jolly[i] == 0)
 					flag = 0;
 			}
-			if(flag = 1)
+			if(flag == 1)
 				printf("Jolly");
 			else if(flag == 0)
 				printf("Not jolly");
