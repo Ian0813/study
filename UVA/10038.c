@@ -1,4 +1,4 @@
-
+// UVA 10038.
 	#include<stdio.h>
 	#include<math.h>
 
