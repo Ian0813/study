@@ -12,7 +12,7 @@
         };
        
 
-        struct node* create(struct node *n, int data)
+        struct node* generate(struct node *n, int data)
         {
             struct node *temp = NULL;
             
@@ -27,7 +27,7 @@
         }
         
         
-        struct node* c()
+        struct node* crate()
         {
             struct node *temp;
             
@@ -57,14 +57,14 @@
             int amount;
             struct node *head, *temp;
     
-            head = c();
+            head = crate();
             printf("Please enter an integer of amount : ");
             scanf("%d", &amount);
             temp = head;
 
             while(amount > 0)
             {
-                temp = create(temp, rand()%100);
+                temp = generate(temp, rand()%100);
                 amount--;
             }            
 
