@@ -17,11 +17,11 @@
          return n;
     }    
 
-    void generate(struct node *n)
+    void generate(struct node *n, int data)
     {
         struct node *temp, *new;
         new = (struct node*) malloc(sizeof(struct node));
-        new->data = rand()%100;
+        new->data = data;
         new->next = NULL;
         temp = n;
         while(temp->next != n)
@@ -52,7 +52,7 @@
 
         while(amount > 0)
         {
-            generate(head);
+            generate(head, amount);
             amount--;
         }    
 
