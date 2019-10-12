@@ -4,12 +4,9 @@
         #include<stdio.h>
         #include<stdlib.h>
         #include<time.h>
+        #include "./S.h"
 
-        struct node
-        {
-            int data;
-            struct node *next;
-        };
+
 
         struct node* crate()
         {
@@ -20,7 +17,6 @@
             temp->next = NULL;
             return temp;
         }
-
 
         struct node* generate(struct node *n, int data)
         {
@@ -110,9 +106,9 @@
             while(1)
             {
                 fflush(stdin);
-                printf("Please enter a number for action : \n 1. traverse \n 2. insert \n 3. delete \n");
+                printf("Please enter a number for action : \n 1. traverse \n 2. insert \n 3. delete \n 4. Compute length \n");
                 scanf("%d", &action);
-                if(action < 1 || action > 3)
+                if(action < 1 || action > 4)
                     continue;
                 if(action == 1)
                     traverse(head);
@@ -129,6 +125,11 @@
                     scanf("%d", &data);
                     fflush(stdin);
                     head = delete(head, data);
+                }
+                else if(action == 4)
+                {
+                    length(head);
+                    fflush(stdin);
                 }
             }
             return 0;
