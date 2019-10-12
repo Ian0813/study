@@ -3,11 +3,12 @@
     #include<stdio.h>
     #include<time.h>
     #include<stdlib.h>
+    #include "./C.h"
 
-    struct node{
-        int data;
-        struct node *next;
-    };
+  
+
+
+
 
     struct node* create(struct node *n)
     {
@@ -116,6 +117,8 @@
                 scanf("%d", &temp_num);
                 delete(head, temp_num);
             }
+            else if(action == 4)
+                length(head);
         }
         return 0;
     }
