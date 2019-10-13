@@ -3,7 +3,7 @@
         struct node{
             int data;
             struct node *previous, *next;
-        }
+        };
 
 
         struct node* create(struct node *n, int data)
@@ -38,7 +38,7 @@
             (n->previous)->next = temp;
             temp->previous = n->previous;
             temp->next = n;
-            n->previous = temp
+            n->previous = temp;
         }
 
         struct node* delete(struct node *n, int data)
@@ -57,13 +57,28 @@
                 {
                     (temp->previous)->next = temp->next;
                     (temp->next)->previous = temp->previous;
+                    free(temp);
                     return n;
                 }
             } 
             else
             {
                 (n->previous)->next = n->next;
-                (n->next)->previous = n->previous;          
-                return n;
+                (n->next)->previous = n->previous;
+                free(n);          
+                return temp;
             }               
+        }
+
+        void traverse(struct node *n)
+        {
+            struct node *temp;
+            printf("%d ", n->data);
+            temp = n->next;
+            while(temp != n)
+            {
+                printf("%d ", temp->data);
+                temp = temp->next;
+            }
+            printf("\n");
         }

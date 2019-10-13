@@ -4,16 +4,18 @@
         #include"./D.h"
         #include<time.h>
 
-        int main
+        int main()
         {
             struct node *head;
 
-            head = create();
-
+       
             int action, amount;
             srand(time(NULL));
+            head = create(head, rand()%100);
+
             printf("Please enter number od amount : ");
             scanf("%d", &amount);
+
             while(amount != 0)
             {
                 generates(head, rand()%100);
@@ -29,9 +31,13 @@
                 if(action == 1)
                     insert(head, rand()%100);
                 else if(action == 2)
-                    head = delete(head);
+                {
+                    int d_data;
+                    printf("Enter a number of what you want to delete : ");
+                    scanf("%d", &d_data);
+                    head = delete(head, d_data);
+                }     
                 else if(action == 3)
                     traverse(head);
-                
             }        
         }

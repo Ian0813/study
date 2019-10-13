@@ -23,3 +23,14 @@
             printf("The lehgtn of link is %d. \n", len);
         }
 		
+        struct node* concatenate(struct node *a, struct node *b)
+        {
+            struct node *c;
+            c = a;
+            while(a->next != NULL)
+            {       
+                a = a->next;
+            }
+            a->next = b;
+            return c;
+        }
