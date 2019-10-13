@@ -6,18 +6,20 @@
         }
 
 
-        struct node* create(struct node *n)
+        struct node* create(struct node *n, int data)
         {
             n = (struct node*) malloc(sizeof(struct node));
-            n->data = rand()%100;
-            n->next = 
+            n->data = data;
+            n->next = n;
+            n->previous = n;
+            return n;
         }
 
-        void insert(struct node *n)
+        void insert(struct node *n, int data)
         {
             struct node *temp;
             temp = (struct node*) malloc(sizeof(struct node));
-            temp->data = rand()%100;
+            temp->data = data;
             (n->previous)->next = temp;
             temp->previous = n->previous;
             temp->next = n;
