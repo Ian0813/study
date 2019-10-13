@@ -16,7 +16,7 @@
             scanf("%d", &amount);
             while(amount != 0)
             {
-                generate(head, rand()%100);
+                generates(head, rand()%100);
                 amount--;
             }
             
