@@ -15,6 +15,21 @@
             return n;
         }
 
+        void generates(struct node *n, int data)
+        {
+                struct node *temp, *new;
+                new = (struct node*) malloc(sizeof(struct node));
+                new->data = data;
+                new->previous = new->next = NULL;
+                temp = n;
+                while(temp->next != n)
+                        temp = temp->next;
+                (temp->next)->previous = new;
+                new->next = temp->next;
+                temp->next = new;
+                new->previous = temp;     
+        }
+
         void insert(struct node *n, int data)
         {
             struct node *temp;
