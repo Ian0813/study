@@ -16,7 +16,7 @@
 		printf("Enter elements of Array\n");
 		for(i = 0; i < num; i++)
 			scanf("%d", &array[i]);
-		QuickSort(array, 0, num);
+		QuickSort(array, 0, num - 1);
 		printf("Array after Sorting\n");
 		for(i = 0; i < num; i++)
 			printf("%d ", array[i]);
