@@ -25,7 +25,8 @@ long long IP_Convert_Int(char *ip){
 
 	long long num = 0, index = 0, partial = 1;
 	
-	char ip_part[3] = {0};
+	char ip_part[3];
+	memset(ip_part, 0, sizeof(ip_part));
 
 	for(int i = 0; i < strlen(ip); i++){
 
