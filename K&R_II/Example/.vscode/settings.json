@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "stdint-intn.h": "c",
+        "api_set.h": "c"
+    }
+}
