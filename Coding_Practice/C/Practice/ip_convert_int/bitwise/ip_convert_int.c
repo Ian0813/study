@@ -80,7 +80,8 @@ int main(int argc, char *argv[]){
 	}
 
 	
-	char ip[INET_ADDRSTRLEN] = {0};
+	char ip[INET_ADDRSTRLEN];
+	memset(ip, 0, sizeof(ip));
 
 	strcpy(ip, argv[1]);
 
